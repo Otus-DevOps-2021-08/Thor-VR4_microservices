@@ -1,0 +1,23 @@
+{
+    "builders": [
+      {
+        "type": "yandex",
+        "service_account_key_file": "{{user `key_file`}}",
+        "folder_id": "{{user `f_id`}}",
+        "source_image_family": "{{user `image`}}",
+        "image_name": "reddit-docker-{{timestamp}}",
+        "image_family": "{{user `family`}}",
+        "ssh_username": "ubuntu",
+        "platform_id": "standard-v1",
+        "subnet_id": "e9binldg2djbcg5r2uab",
+        "use_ipv4_nat": true
+      }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible",
+            "playbook_file": "ansible/playbooks/docker.yml",
+            "user": "ubuntu"
+        }
+    ]
+  }

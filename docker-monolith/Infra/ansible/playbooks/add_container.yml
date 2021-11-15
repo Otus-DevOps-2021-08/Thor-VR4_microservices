@@ -1,0 +1,27 @@
+---
+- name: Run Docker container
+  hosts: all
+  become: true
+  tasks:
+    - name: PIP install
+      apt:
+        name:
+          - python-pip
+          - python3-pip
+        state: present
+        update_cache: yes
+
+
+    - name: Docker SDK
+      pip:
+        name:
+          - docker
+        state: present
+
+    - name: start container
+      docker_container:
+        name: reddit
+        image: 4444666644446666/otus-reddit:1.0
+        state: started
+        ports:
+          - "9292:9292"

@@ -1,0 +1,6 @@
+{
+    "f_id": "b1gr50uaokcf7cnbldrn",
+    "image": "ubuntu-1804-lts",
+    "key_file": "/home/thor/robothor_key.json",
+    "family": "reddit-docker"
+}
